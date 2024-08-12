@@ -143,7 +143,7 @@ class Shape {
     char* memory;
     public:
         int memory_size= 1*100*1024*1024 ;//char(1byte)-->to make 100 megabyte memory
-        int a=10;
+        // int a=10;
         Shape(){
            memory= new char[memory_size];
            
@@ -171,16 +171,7 @@ int main(){
     double duration =  (end - start) ;
 
     std::cout<<endl<<duration<<"ms"<<endl;
-    // for (size_t i = 0; i < temp.get_size(); i++)
-    // {
-    //     std::cout<<temp[i]<<" , ";
-    // }
 
-    for (size_t i = 0; i < 100; ++i)
-    {
-        std::cout<<obj[i]->a<<" , ";
-    }
-    
     
     return 0;
 }
