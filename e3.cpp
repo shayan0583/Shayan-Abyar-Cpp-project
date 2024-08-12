@@ -62,7 +62,8 @@ void insert(T data , int index){
         capacity*=2;
     }
     else {
-        T* temp= new T[capacity*2];
+        if(size==capacity){capacity*=2;}
+        T* temp= new T[capacity];
         int counter=0;
         for(int i=0 ; i<size+1 ; i++){
             if(i==index){
@@ -74,7 +75,6 @@ void insert(T data , int index){
             }}
         delete[]arr;
         arr=temp;
-        capacity*=2;
         size++;
 }
 }
@@ -160,12 +160,12 @@ int main(){
    std::clock_t start = std::clock();
     
     Vector<Shape*> obj;
-    Vector<int> temp;
+
    
     for (size_t i = 0; i < 100; ++i)
     {
 
-        obj.insert(new Shape(),i);
+        obj.insert(new Shape(),0);
     }
    std::clock_t end= std::clock();
     double duration =  (end - start) ;
