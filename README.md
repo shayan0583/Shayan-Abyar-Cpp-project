@@ -24,3 +24,8 @@ Part 2 :
 first --> create cube , sphere , cylinder for each 3 devices and Calculate their total (Volume , Area , Mass) by EvalVolume , EValArea , EvalMass functions
 
 next --> by adddevice function add all of devices in device_total and Calculate their total (Volume , Area , Mass)
+You can Check the resault in 
+Link --> https://github.com/shayan0583/Shayan-Abyar-Cpp-project/blob/main/Part%202/Device.png
+
+
+![Device](https://github.com/user-attachments/assets/e3fd8dce-23f5-4317-bcd8-451eeddf8a20)
