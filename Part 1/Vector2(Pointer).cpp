@@ -15,7 +15,6 @@ class vector{
 	int size(){
 		return N;
 	}
-		;
      protected:
         T** data;	
 		int N=0;	
