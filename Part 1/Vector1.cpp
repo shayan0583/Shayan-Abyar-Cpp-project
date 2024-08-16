@@ -1,6 +1,6 @@
 #include<iostream>
 #include<ctime>
-
+#include <vector>
 using namespace std;
 
 template<typename T>
@@ -55,11 +55,7 @@ void pop_back(){
 }
 
 void insert(T data , int index){
-    if (index>= size){
-        index=size;
-        arr[size]=data;
-        size++;
-        capacity*=2;
+    if (index> size){
     }
     else {
         if(size==capacity){capacity*=2;}
@@ -109,24 +105,14 @@ int get_size() const{
 
 void resize(int new_size){
     T default_var;
-    if (new_size<size){
     T* temp= new T[new_size];
     for (int i=0;i<new_size;i++){
         temp[i]=arr[i];
     }
     delete[]arr;
     arr=temp;
-    }
-    else{
-    T* temp= new T[new_size];
-    for (int i=0;i<new_size;i++){
-        temp[i]=arr[i];
-    }
-    delete[]arr;
-    arr=temp;
-    }
-    capacity=2*new_size;
     size=new_size;
+
 }
 /// 
 int get_capacity() const{
@@ -140,17 +126,16 @@ T& operator[](int a){return arr[a];}
 
 class Shape {
     private:
-    char* memory;
+    std::vector<char> memory;
     public:
-        int memory_size= 1*100*1024*1024 ;//char(1byte)-->to make 100 megabyte memory
-        // int a=10;
+        int memory_size= 10*1024*1024 ;//char(1byte)-->to make 10 megabyte memory
+        
         Shape(){
-           memory= new char[memory_size];
-           
+            memory.resize(memory_size);
 
         }
         ~Shape(){
-            delete[] memory;
+            
         }
 };
 
@@ -159,19 +144,16 @@ class Shape {
 int main(){
    std::clock_t start = std::clock();
     
-    Vector<Shape*> obj;
+    Vector<Shape> obj;
+    Shape a;
+    for (size_t i=0 ; i<10 ; ++i){
 
-   
-    for (size_t i = 0; i < 100; ++i)
-    {
-
-        obj.insert(new Shape(),0);
+    obj.insert(a,0);
     }
    std::clock_t end= std::clock();
     double duration =  (end - start) ;
 
     std::cout<<endl<<duration<<"ms"<<endl;
 
-    
     return 0;
 }
