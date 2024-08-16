@@ -142,18 +142,27 @@ class Shape {
 
 
 int main(){
-   std::clock_t start = std::clock();
-    
     Vector<Shape> obj;
     Shape a;
-    for (size_t i=0 ; i<10 ; ++i){
-
+    int number =10;
+   std::clock_t startinsert = std::clock();
+    for (size_t i=0 ; i<number ; ++i){
     obj.insert(a,0);
     }
-   std::clock_t end= std::clock();
-    double duration =  (end - start) ;
+   std::clock_t endinsert= std::clock();
+    double durationinsert =  (endinsert - startinsert) ;
+    std::cout<<"The avergae Duartion for insert <"<<number<<"> Shape :  "<<durationinsert/number<<" ms"<<endl;
+    std::cout<<"The Total Duration for insert <"<<number<<"> Shape : "<<durationinsert<<" ms"<<endl;
+    
+    std::cout<<endl;
 
-    std::cout<<endl<<duration<<"ms"<<endl;
-
+   std::clock_t startremove = std::clock();
+    for (size_t i=0 ; i<number ; ++i){
+    obj.remove(0);
+    }
+   std::clock_t endremove= std::clock();
+    double durationremove =  (endremove - startremove) ;
+    std::cout<<"The avergae Duartion for remove <"<<number<<"> Shape :  "<<durationremove/number<<" ms"<<endl;
+    std::cout<<"The Total Duration for remove <"<<number<<"> Shape : "<<durationremove<<" ms"<<endl;
     return 0;
 }
